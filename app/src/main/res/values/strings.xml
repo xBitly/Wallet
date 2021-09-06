@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Wallet</string>
+    <string name="y">You don’t have any cards yet</string>
+    <string name="с">Choose the card you want</string>
+    <string name="enter_the_card_details">Enter the card details</string>
+    <string name="add_a_new_card">Add a new card</string>
+    <string name="enter_card_name">Enter card name</string>
+    <string name="all">All</string>
+    <string name="card_name">Card name</string>
+    <string name="barcode_data">Barcode data</string>
+    <string name="save">SAVE</string>
+    <string name="scan_the_barcode">Scan the barcode</string>
+    <string name="barcode_type">Barcode type</string>
+    <string name="qr">QR</string>
+    <string name="ean13">EAN13</string>
+    <string name="code128">CODE128</string>
+    <string name="other">Other</string>
+    <string name="card_color">Card color</string>
+    <string name="no_cards_found">No cards found</string>
+    <string name="information_about_card">Information about card</string>
+    <string name="barcode_data_2">Barcode data:</string>
+    <string name="delete">DELETE</string>
+    <string name="pdf417">PDF417</string>
+    <string name="dm">DM</string>
+</resources>

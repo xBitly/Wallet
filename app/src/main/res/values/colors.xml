@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black70">#B3000000</color>
+    <color name="black30">#4D000000</color>
+    <color name="red">#FF7676</color>
+    <color name="blue">#7676FF</color>
+    <color name="green_card">#DEFFDB</color>
+    <color name="blue_card">#DBE5FF</color>
+    <color name="red_card">#FFDBDB</color>
+    <color name="pink_card">#FEDBFF</color>
+    <color name="yellow_card">#FCFFDB</color>
+    <color name="turquoise_card">#DBFFFB</color>
+    <color name="orange_card">#FFECDB</color>
+</resources>
