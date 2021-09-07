@@ -96,7 +96,6 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,8 +1,6 @@
 package ru.xbitly.wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -16,21 +14,23 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.loopeer.cardstack.CardStackView;
 import com.shashank.sony.fancytoastlib.FancyToast;
 import java.util.Calendar;
 import java.util.List;
 
+import ru.xbitly.wallet.CardStackView.CardStackAdapter;
 import ru.xbitly.wallet.Database.Card;
 import ru.xbitly.wallet.Database.DatabaseClient;
-import ru.xbitly.wallet.Recycler.ListAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener{
 
-    RecyclerView recyclerView;
     RelativeLayout noFound;
     View searchLine;
     ImageView searchIcon;
     private long backPressedTime;
+    private CardStackView mStackView;
+    private CardStackAdapter mTestStackAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
         TextView gmTxt = findViewById(R.id.gnma_txt);
         ImageButton addBtn = findViewById(R.id.add_btn);
-        recyclerView = findViewById(R.id.recycler);
+        mStackView = findViewById(R.id.recycler);
         searchLine = findViewById(R.id.search_line);
         EditText searchEdit = findViewById(R.id.search_edittext);
         noFound = findViewById(R.id.no_found_window);
         searchIcon = findViewById(R.id.img1);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.setStackFromEnd(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setHasFixedSize(true);
+        mStackView.setItemExpendListener(this);
 
         //приветсвенное сообщение
         int hours = Calendar.getInstance().getTime().getHours();
@@ -106,9 +102,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Card> cards) {
                 super.onPostExecute(cards);
-                ListAdapter adapter = new ListAdapter(cards, noFound, searchLine, getResources(), searchIcon, MainActivity.this);
-                adapter.search(search_text);
-                recyclerView.setAdapter(adapter);
+                mTestStackAdapter = new CardStackAdapter(cards, noFound, searchLine, getResources(), searchIcon, MainActivity.this);
+                mStackView.setAdapter(mTestStackAdapter);
+                mTestStackAdapter.updateData(cards);
+                mTestStackAdapter.search(search_text);
+                //ListAdapter adapter = new ListAdapter(cards, noFound, searchLine, getResources(), searchIcon, MainActivity.this);
+                //adapter.search(search_text);
+                //recyclerView.setAdapter(adapter);
             }
         }
 
@@ -127,5 +127,10 @@ public class MainActivity extends AppCompatActivity {
             FancyToast.makeText(this, "Click again to exit", FancyToast.LENGTH_SHORT, FancyToast.INFO,false).show();
         }
         backPressedTime = System.currentTimeMillis();
+    }
+
+    @Override
+    public void onItemExpend(boolean expend) {
+
     }
 }
