@@ -9,14 +9,14 @@
     <FrameLayout
         android:id="@+id/frame_list_card_item"
         android:layout_width="match_parent"
-        android:layout_height="220dp">
+        android:layout_height="220dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            app:cardCornerRadius="30sp"
+            app:cardCornerRadius="30dp"
             app:cardElevation="0dp">
             <RelativeLayout
                 android:id="@+id/card_background"
@@ -33,5 +33,9 @@
                     android:layout_centerInParent="true" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_stroke"/>
     </FrameLayout>
 </RelativeLayout>
