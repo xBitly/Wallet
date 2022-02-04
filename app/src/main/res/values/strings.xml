@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Wallet</string>
     <string name="y">You don’t have any cards yet</string>
-    <string name="с">Choose the card you want</string>
+    <string name="c">Choose the card you want</string>
     <string name="enter_the_card_details">Enter the card details</string>
     <string name="add_a_new_card">Add a new card</string>
     <string name="enter_card_name">Enter card name</string>

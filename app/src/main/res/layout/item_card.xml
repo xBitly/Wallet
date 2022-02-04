@@ -9,28 +9,29 @@
     <FrameLayout
         android:id="@+id/frame_list_card_item"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
+        android:layout_height="220dp">
 
         <androidx.cardview.widget.CardView
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="30dp"
             app:cardElevation="0dp">
+
             <RelativeLayout
                 android:id="@+id/card_background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/card_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#000"
-                    android:textSize="26sp"
+                    android:layout_centerInParent="true"
                     android:maxLength="20"
                     android:maxLines="1"
-                    android:layout_centerInParent="true" />
+                    android:textColor="#000"
+                    android:textSize="26sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <View

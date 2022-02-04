@@ -69,6 +69,7 @@ public class AddActivity extends AppCompatActivity {
             barcodeDataCharLimit.setText("0/32");
             barcodeDataEdit.setFilters(new InputFilter[] { new InputFilter.LengthFilter(32) });
             barcodeDataEdit.setInputType(InputType.TYPE_CLASS_TEXT);
+            barcodeDataEdit.setText("");
         });
 
         eanBtn.setOnClickListener(view -> {
@@ -77,6 +78,7 @@ public class AddActivity extends AppCompatActivity {
             barcodeDataCharLimit.setText("0/12");
             barcodeDataEdit.setFilters(new InputFilter[] { new InputFilter.LengthFilter(12) });
             barcodeDataEdit.setInputType(InputType.TYPE_CLASS_NUMBER);
+            barcodeDataEdit.setText("");
         });
 
         codeBtn.setOnClickListener(view -> {
@@ -85,6 +87,7 @@ public class AddActivity extends AppCompatActivity {
             barcodeDataCharLimit.setText("0/32");
             barcodeDataEdit.setFilters(new InputFilter[] { new InputFilter.LengthFilter(32) });
             barcodeDataEdit.setInputType(InputType.TYPE_CLASS_NUMBER);
+            barcodeDataEdit.setText("");
         });
 
         otherBtn.setOnClickListener(view -> {
@@ -93,6 +96,7 @@ public class AddActivity extends AppCompatActivity {
             barcodeDataCharLimit.setText("0/32");
             barcodeDataEdit.setFilters(new InputFilter[] { new InputFilter.LengthFilter(32) });
             barcodeDataEdit.setInputType(InputType.TYPE_CLASS_TEXT);
+            barcodeDataEdit.setText("");
         });
 
         //цвет карты

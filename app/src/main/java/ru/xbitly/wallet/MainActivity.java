@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     RelativeLayout noFound;
     View searchLine;
     ImageView searchIcon;
+    TextView ycTxt;
     private long backPressedTime;
     private CardStackView mStackView;
     private CardStackAdapter mTestStackAdapter;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
         setContentView(R.layout.activity_main);
 
         TextView gmTxt = findViewById(R.id.gnma_txt);
+        ycTxt = findViewById(R.id.yc_txt);
         ImageButton addBtn = findViewById(R.id.add_btn);
         mStackView = findViewById(R.id.recycler);
         searchLine = findViewById(R.id.search_line);
@@ -102,13 +104,15 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
             @Override
             protected void onPostExecute(List<Card> cards) {
                 super.onPostExecute(cards);
+                if(cards.size() > 0){
+                    ycTxt.setText(R.string.c);
+                } else {
+                    ycTxt.setText(R.string.y);
+                }
                 mTestStackAdapter = new CardStackAdapter(cards, noFound, searchLine, getResources(), searchIcon, MainActivity.this);
                 mStackView.setAdapter(mTestStackAdapter);
                 mTestStackAdapter.updateData(cards);
                 mTestStackAdapter.search(search_text);
-                //ListAdapter adapter = new ListAdapter(cards, noFound, searchLine, getResources(), searchIcon, MainActivity.this);
-                //adapter.search(search_text);
-                //recyclerView.setAdapter(adapter);
             }
         }
 
